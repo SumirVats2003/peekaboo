@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
 								Row(
 									mainAxisAlignment: MainAxisAlignment.center,
 									children: [
-										Text('Not a member? '),
+										const Text('Not a member? '),
 										Text(
 											'Register Now',
 											style: TextStyle(
