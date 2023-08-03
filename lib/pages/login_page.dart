@@ -23,64 +23,66 @@ class _LoginPageState extends State<LoginPage> {
 				child: Center(
 					child: Padding(
 						padding: const EdgeInsets.all(25.0),
-						child: Column(
-							mainAxisAlignment: MainAxisAlignment.center,
-							children: [
-								// logo,
-								Image.asset(
-									'assets/logoText.png',
-									width: 100,
-								),
+						child: SingleChildScrollView(
+							child: Column(
+								mainAxisAlignment: MainAxisAlignment.center,
+								children: [
+									// logo,
+									Image.asset(
+										'assets/logoText.png',
+										width: 100,
+									),
 
-								const SizedBox(
-									height: 20,
-								),
+									const SizedBox(
+										height: 20,
+									),
 	
-								// welcome back message
-								const Text(
-									"Welcome Back! You've been missed!!!"
-								),
+									// welcome back message
+									const Text(
+										"Welcome Back! You've been missed!!!"
+									),
 
-								const SizedBox(
-									height: 40,
-								),
+									const SizedBox(
+										height: 40,
+									),
 	
-								// email
-								MyTextField(
-									controller: emailController, 
-									hintText: 'Email', 
-									obscureText: false
-								),
+									// email
+									MyTextField(
+										controller: emailController, 
+										hintText: 'Email', 
+										obscureText: false
+									),
 	
-								// password
-								MyTextField(
-									controller: passwordController, 
-									hintText: 'Password', 
-									obscureText: true
-								),
+									// password
+									MyTextField(
+										controller: passwordController, 
+										hintText: 'Password', 
+										obscureText: true
+									),
 
-								// sign in button
-								const MyButton(onTap: null, text: 'Sign In'),
+									// sign in button
+									const MyButton(onTap: null, text: 'Sign In'),
 
-								const SizedBox(
-									height: 20,
-								),
+									const SizedBox(
+										height: 20,
+									),
 	
-								// not a member? register now
-								Row(
-									mainAxisAlignment: MainAxisAlignment.center,
-									children: [
-										const Text('Not a member? '),
-										Text(
-											'Register Now',
-											style: TextStyle(
-												fontWeight: FontWeight.bold,
-												color: HexColor('#5271ff')
-											),
-										)
-									],
-								)
-							],
+									// not a member? register now
+									Row(
+										mainAxisAlignment: MainAxisAlignment.center,
+										children: [
+											const Text('Not a member? '),
+											Text(
+												'Register Now',
+												style: TextStyle(
+													fontWeight: FontWeight.bold,
+													color: HexColor('#5271ff')
+												),
+											)
+										],
+									)
+								],
+							),
 						),
 					),
 				),
