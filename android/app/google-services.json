@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "307964864920",
+    "firebase_url": "https://peekaboo-3b7f1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "peekaboo-3b7f1",
+    "storage_bucket": "peekaboo-3b7f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:307964864920:android:7a52a0101f27d5ac5423ed",
+        "android_client_info": {
+          "package_name": "com.example.peekaboo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "307964864920-ndug78v9utqohhtatg80o015ab68elru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfra87fGtT5k4FiCoVIKxyb6rdvoxKSaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "307964864920-ndug78v9utqohhtatg80o015ab68elru.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "307964864920-272eqo18abndumdt971isl4hu8el0d7v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.peekaboo.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
