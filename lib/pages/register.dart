@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:peekaboo/components/my_button.dart';
-import 'package:peekaboo/components/text_field.dart';
 
-class LoginPage extends StatefulWidget {
+import '../components/my_button.dart';
+import '../components/text_field.dart';
+
+class Register extends StatefulWidget {
 	final void Function()? onTap;
-  const LoginPage({super.key, required this.onTap});
+  const Register({super.key, required this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<Register> createState() => _RegisterState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-	// controllers
+class _RegisterState extends State<Register> {
+  // controllers
 	final emailController = TextEditingController();
 	final passwordController = TextEditingController();
+	final confirmPasswordController = TextEditingController();
 
-	void signIn() {}
+	void register() {}
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +42,9 @@ class _LoginPageState extends State<LoginPage> {
 										height: 20,
 									),
 	
-									// welcome back message
+									// register message
 									const Text(
-										"Welcome Back! You've been missed!!!"
+										"Register Yourself to the Peekaboo App"
 									),
 
 									const SizedBox(
@@ -62,26 +64,33 @@ class _LoginPageState extends State<LoginPage> {
 										hintText: 'Password', 
 										obscureText: true
 									),
+	
+									// confirm password
+									MyTextField(
+										controller: confirmPasswordController, 
+										hintText: 'Confirm Password', 
+										obscureText: true
+									),
 
-									// sign in button
+									// register button
 									MyButton(
-										onTap: signIn, 
-										text: 'Sign In'
+										onTap: register, 
+										text: 'Register'
 									),
 
 									const SizedBox(
 										height: 20,
 									),
 	
-									// not a member? register now
+									// already a member? sign in
 									Row(
 										mainAxisAlignment: MainAxisAlignment.center,
 										children: [
-											const Text('Not a member? '),
+											const Text('Already a user? '),
 											GestureDetector(
 												onTap: widget.onTap,
 												child: Text(
-													'Register Now',
+													'Sign In',
 													style: TextStyle(
 														fontWeight: FontWeight.bold,
 														color: HexColor('#5271ff')
