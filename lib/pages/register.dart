@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:peekaboo/services/auth/auth_service.dart';
+import 'package:provider/provider.dart';
 
 import '../components/my_button.dart';
 import '../components/text_field.dart';
@@ -18,7 +20,25 @@ class _RegisterState extends State<Register> {
 	final passwordController = TextEditingController();
 	final confirmPasswordController = TextEditingController();
 
-	void register() {}
+	void signUp() async {
+		if (passwordController.text != confirmPasswordController.text) {
+			ScaffoldMessenger.of(context)
+			.showSnackBar(const SnackBar(content: Text("Passwords don't match")));
+			return;
+		}
+
+		final authService = Provider.of<AuthService>(context, listen: false);
+		try {
+			await authService.signUpWithEmailAndPassword(
+				emailController.text, 
+				passwordController.text
+			);
+		}
+		catch (e) {
+			ScaffoldMessenger.of(context)
+			.showSnackBar(SnackBar(content: Text(e.toString())));
+		}
+	}
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +94,7 @@ class _RegisterState extends State<Register> {
 
 									// register button
 									MyButton(
-										onTap: register, 
+										onTap: signUp, 
 										text: 'Register'
 									),
 
