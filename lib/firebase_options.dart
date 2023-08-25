@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'services/secrets/secrets.dart' as secrets;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -52,12 +53,12 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBfra87fGtT5k4FiCoVIKxyb6rdvoxKSaY',
-    appId: '1:307964864920:android:7a52a0101f27d5ac5423ed',
-    messagingSenderId: '307964864920',
-    projectId: 'peekaboo-3b7f1',
-    databaseURL: 'https://peekaboo-3b7f1-default-rtdb.asia-southeast1.firebasedatabase.app',
-    storageBucket: 'peekaboo-3b7f1.appspot.com',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: secrets.apiKey,
+    appId: secrets.appId,
+    messagingSenderId: secrets.messagingSenderId,
+    projectId: secrets.projectId,
+    databaseURL: secrets.databaseURL,
+    storageBucket: secrets.storageBucket,
   );
 }
