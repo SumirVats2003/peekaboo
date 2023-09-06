@@ -64,17 +64,24 @@ class _HomePageState extends State<HomePage> {
     Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
 
     if (_auth.currentUser!.email != data['email']){
-      return ListTile(
-        title: Text(data['email']),
-        onTap: () {
-          Navigator.push(
-            context, 
-            MaterialPageRoute(builder: (context)=>ChatPage(
-              receiverUserEmail: data['email'],
-              receiverUserId: data['uid'],
-            ))
-          );
-        },
+      return Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: ListTile(
+          title: Text(data['email']),
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(width: 1),
+            borderRadius: BorderRadius.circular(5)
+          ),
+          onTap: () {
+            Navigator.push(
+              context, 
+              MaterialPageRoute(builder: (context)=>ChatPage(
+                receiverUserEmail: data['email'],
+                receiverUserId: data['uid'],
+              ))
+            );
+          },
+        ),
       );
     }
 
